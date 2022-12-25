@@ -6,7 +6,7 @@ from passlib.hash import pbkdf2_sha256
 now = datetime.datetime.now()
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "secret_key_here"
+app.config['SECRET_KEY'] = "nishat9903"
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 file = open('todos.json')
 todos = json.load(file)
@@ -60,7 +60,7 @@ def addtodo():
 	todos[session['username']].update({title: ["Not Done", desc, date, comdate, ""]})
 	file = open('todos.json', 'w')
 	json.dump(todos, file, indent=4)
-	file.close()	
+	file.close()
 	return redirect('/')
 
 @app.route('/login')
